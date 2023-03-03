@@ -6,12 +6,15 @@ import React from "react";
 type DropdownProps = {
   items: ItemType[];
   text: string;
+  disabled: boolean;
 };
 
-export const Dropdown: React.FC<DropdownProps> = ({ items, text }) => {
+const Dropdown: React.FC<DropdownProps> = ({ items, text, disabled }) => {
   return (
-    <_Dropdown menu={{ items }} trigger={["click"]}>
+    <_Dropdown menu={{ items }} trigger={["click"]} disabled={disabled}>
       <span>{text}</span>
     </_Dropdown>
   );
 };
+
+export default Dropdown;
