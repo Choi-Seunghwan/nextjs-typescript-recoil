@@ -6,6 +6,8 @@ import styles from '@styles/seller.module.scss';
 import PeriodPicker from '@components/molecules/periodPicker/PeriodPicker';
 import Button from '@components/atoms/button/Button';
 import Table from '@components/atoms/table/table';
+import api from 'src/api/API';
+import { useEffect } from 'react';
 
 const Seller = () => {
   const serchKeywordOptions = [
@@ -72,6 +74,13 @@ const Seller = () => {
       render: (id: string) => <Button clickHandler={itemDetailBtn(id)} text="상세보기"></Button>,
     },
   ];
+
+  useEffect(() => {
+    async function getSeller() {
+      const result = await api.get('/admin/seller');
+    }
+    getSeller();
+  }, []);
 
   const itemDetailBtn = (id: string) => {
     // console.log("@#", id);
