@@ -2,9 +2,9 @@ import React from "react";
 import { Input as _Input } from "antd";
 
 type InputProps = {
-  value: string;
-  placeholder: string;
-  disabled: boolean;
+  value?: string;
+  placeholder?: string;
+  disabled?: boolean;
 };
 
 const Input: React.FC<InputProps> = ({
@@ -20,3 +20,5 @@ const Input: React.FC<InputProps> = ({
     ></_Input>
   );
 };
+
+export default Input;

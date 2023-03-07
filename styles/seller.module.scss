@@ -1,11 +1,18 @@
 .seller {
 }
 
+.seller-content {
+  padding-left: 25px;
+  padding-top: 30px;
+}
+
 .seller-table-info {
   display: flex;
   flex-direction: column;
   background: #f5f5f5;
   width: 948px;
+  padding: 22px;
+  border-radius: 4px;
 
   .field-text {
     font-weight: bold;
