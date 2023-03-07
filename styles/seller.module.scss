@@ -1,8 +1,10 @@
 .seller {
+  min-width: 980px;
 }
 
 .seller-content {
   padding-left: 25px;
+  padding-right: 25px;
   padding-top: 30px;
 }
 
@@ -13,11 +15,28 @@
   width: 948px;
   padding: 22px;
   border-radius: 4px;
+  gap: 16px;
 
   .field-text {
     font-weight: bold;
+    padding-right: 10px;
   }
 }
 
+.seller-table-info-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.seller-table-info-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
 .seller-table-wrap {
+  margin-top: 60px;
 }
