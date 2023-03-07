@@ -9,7 +9,7 @@ type ButtonProps = {
   loading: boolean;
 };
 
-const Dropdown: React.FC<ButtonProps> = ({ text, type, disabled, loading }) => {
+const Button: React.FC<ButtonProps> = ({ text, type, disabled, loading }) => {
   return (
     <_Button disabled={disabled} type={type} loading={loading}>
       <span>{text}</span>
@@ -17,4 +17,4 @@ const Dropdown: React.FC<ButtonProps> = ({ text, type, disabled, loading }) => {
   );
 };
 
-export default Dropdown;
+export default Button;

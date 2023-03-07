@@ -10,7 +10,7 @@ const Title: React.FC<TitleProps> = ({ text, subText }) => {
     <div className={styles["title"]}>
       <p className={styles["title-text"]}>{text}</p>
       <h4 className={styles["title-sub-text"]}>{subText}</h4>
-      <hr />
+      <hr className={styles["title-divider"]} />
     </div>
   );
 };

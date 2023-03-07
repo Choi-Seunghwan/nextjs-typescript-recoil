@@ -1,3 +1,5 @@
+@import "./globals-antd.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,6 +15,7 @@ body {
   font-family: "Noto Sans KR";
   font-style: normal;
   color: #000000;
+  font-size: 14px;
 }
 
 a {

@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { Menu as _Menu, Layout as _Layout, MenuProps } from "antd";
 import Link from "next/link";
+import styles from "@styles/layout.module.scss";
 
 const { Header, Sider, Content } = _Layout;
 const sideMenuItems: MenuProps["items"] = [
@@ -37,23 +38,17 @@ export type LayoutProps = {
 export const Layout: React.FC<LayoutProps> = ({ children, noSide }) => {
   return (
     <_Layout>
-      <Header
-        style={{
-          backgroundColor: "#ffffff",
-          borderBottom: "solid 1px #ccc",
-          paddingLeft: "20px",
-        }}
-      >
+      <Header className={styles["layout-header"]}>
         <Link href={"/"}>
           <h2>마켓플레이스 관리자</h2>
         </Link>
       </Header>
       <_Layout style={{ height: "100vh" }}>
         {!noSide && (
-          <Sider width={200}>
+          <Sider className={styles["layout-slider"]} width={200}>
             <_Menu
               mode="inline"
-              style={{ height: "100%", borderRight: 0 }}
+              className={styles["layout-slider-menu"]}
               items={sideMenuItems}
             />
           </Sider>
