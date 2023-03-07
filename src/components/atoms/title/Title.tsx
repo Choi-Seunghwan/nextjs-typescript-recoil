@@ -1,4 +1,4 @@
-import styles from "./title.module.scss";
+import styles from './title.module.scss';
 
 type TitleProps = {
   text?: string;
@@ -7,10 +7,10 @@ type TitleProps = {
 
 const Title: React.FC<TitleProps> = ({ text, subText }) => {
   return (
-    <div className={styles["title"]}>
-      <p className={styles["title-text"]}>{text}</p>
-      <h4 className={styles["title-sub-text"]}>{subText}</h4>
-      <hr className={styles["title-divider"]} />
+    <div className={styles['title']}>
+      <p className={styles['title-text']}>{text}</p>
+      <h4 className={styles['title-sub-text']}>{subText}</h4>
+      <hr className={styles['title-divider']} />
     </div>
   );
 };

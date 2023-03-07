@@ -1,4 +1,4 @@
-import WithLayout from "@components/templates/withLayout";
+import WithLayout from '@components/templates/withLayout';
 
 const Home = () => (
   <>

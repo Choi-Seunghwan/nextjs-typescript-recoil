@@ -1,5 +1,5 @@
-import Title from "@components/atoms/title/Title";
-import WithLayout from "@components/templates/withLayout";
+import Title from '@components/atoms/title/Title';
+import WithLayout from '@components/templates/withLayout';
 
 const Market = () => (
   <div>

@@ -1,19 +1,15 @@
-import { DatePicker as _DatePicker } from "antd";
-import React from "react";
-import { BaseProps } from "src/types/common";
+import { DatePicker as _DatePicker } from 'antd';
+import React from 'react';
+import { BaseProps } from 'src/types/common';
 
 type DatePickerProps = {
   defaultValue?: any;
   disabled?: boolean;
 } & BaseProps;
 
-const DatePicker: React.FC<DatePickerProps> = ({
-  defaultValue,
-  disabled,
-  style,
-}) => {
+const DatePicker: React.FC<DatePickerProps> = ({ defaultValue, disabled, style }) => {
   const onChange = (value: any) => {
-    console.log("@@", value);
+    console.log('@@', value);
   };
 
   return (

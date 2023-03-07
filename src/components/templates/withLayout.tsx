@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
-import { FC } from "react";
-import { Layout, LayoutProps } from "./Layout";
+import { FC } from 'react';
+import { Layout, LayoutProps } from './Layout';
 
 const WithLayout = (Component: FC, layoutProps?: LayoutProps) => {
   return (props: any) => {

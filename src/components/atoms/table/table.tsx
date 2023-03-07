@@ -1,6 +1,6 @@
-import React from "react";
-import { Table as _Table } from "antd";
-import { BaseProps } from "src/types/common";
+import React from 'react';
+import { Table as _Table } from 'antd';
+import { BaseProps } from 'src/types/common';
 
 type TableProps = {
   dataSource?: any[];
@@ -9,13 +9,7 @@ type TableProps = {
 } & BaseProps;
 
 const Table: React.FC<TableProps> = ({ dataSource, columns }) => {
-  return (
-    <_Table
-      dataSource={dataSource}
-      columns={columns}
-      className="table"
-    ></_Table>
-  );
+  return <_Table dataSource={dataSource} columns={columns} className="table"></_Table>;
 };
 
 export default Table;
