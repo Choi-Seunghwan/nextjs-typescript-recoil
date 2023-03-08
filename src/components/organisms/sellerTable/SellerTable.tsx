@@ -4,11 +4,6 @@ import { BaseProps } from 'src/types/common';
 import Button from '@components/atoms/button/Button';
 import Table from '@components/atoms/table/Table';
 
-type SellerTableProps = {
-  dataSource?: any[];
-  disabled?: boolean;
-} & BaseProps;
-
 const columns = [
   {
     title: 'No.',
@@ -66,6 +61,8 @@ const columns = [
 const itemDetailBtn = (id: string) => {
   // console.log("@#", id);
 };
+
+type SellerTableProps = {} & BaseProps;
 
 const SellerTable: React.FC<SellerTableProps> = () => {
   const [sellers, setSellers] = useState([]);

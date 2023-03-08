@@ -8,8 +8,8 @@ type TableProps = {
   disabled?: boolean;
 } & BaseProps;
 
-const Table: React.FC<TableProps> = ({ dataSource, columns }) => {
-  return <_Table dataSource={dataSource} columns={columns} className="table"></_Table>;
+const Table: React.FC<TableProps> = props => {
+  return <_Table {...props} className="table"></_Table>;
 };
 
 export default Table;

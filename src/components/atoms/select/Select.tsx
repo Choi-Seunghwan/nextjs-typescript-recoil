@@ -4,13 +4,13 @@ import React from 'react';
 import { BaseProps } from 'src/types/common';
 
 type SelectProps = {
-  options: DefaultOptionType[];
+  options?: DefaultOptionType[];
   defaultValue?: any;
   disabled?: boolean;
 } & BaseProps;
 
-const Select: React.FC<SelectProps> = ({ options, defaultValue, disabled, style }) => {
-  return <_Select options={options} defaultValue={defaultValue} disabled={disabled} style={style}></_Select>;
+const Select: React.FC<SelectProps> = props => {
+  return <_Select {...props}></_Select>;
 };
 
 export default Select;

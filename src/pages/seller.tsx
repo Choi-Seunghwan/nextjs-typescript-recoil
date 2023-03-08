@@ -6,8 +6,11 @@ import styles from '@styles/seller.module.scss';
 import PeriodPicker from '@components/molecules/periodPicker/PeriodPicker';
 import Button from '@components/atoms/button/Button';
 import SellerTable from '@components/organisms/sellerTable/SellerTable';
+import { useRouter } from 'next/router';
 
 const Seller = () => {
+  const router = useRouter();
+
   const serchKeywordOptions = [
     { label: '아이디', value: 'email' },
     { label: '닉네임', value: 'nickname' },
@@ -18,6 +21,11 @@ const Seller = () => {
     { label: '공개', value: 'opened' },
     { label: '비공개', value: 'closed' },
   ];
+
+  const goNewSellerBtnHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    router.push('/new-seller');
+  };
 
   return (
     <div className={styles['seller']}>
@@ -50,7 +58,7 @@ const Seller = () => {
           </div>
         </div>
         <div>
-          <Button text="판매자 등록" />
+          <Button text="판매자 등록" clickHandler={goNewSellerBtnHandler} />
         </div>
         <div className={styles['seller-table-wrap']}>
           <SellerTable />

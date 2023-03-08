@@ -7,20 +7,12 @@ type DatePickerProps = {
   disabled?: boolean;
 } & BaseProps;
 
-const DatePicker: React.FC<DatePickerProps> = ({ defaultValue, disabled, style }) => {
+const DatePicker: React.FC<DatePickerProps> = props => {
   const onChange = (value: any) => {
     console.log('@@', value);
   };
 
-  return (
-    <_DatePicker
-      onChange={onChange}
-      defaultValue={defaultValue}
-      disabled={disabled}
-      style={style}
-      className="date-picker"
-    ></_DatePicker>
-  );
+  return <_DatePicker {...props} onChange={onChange} className="date-picker"></_DatePicker>;
 };
 
 export default DatePicker;

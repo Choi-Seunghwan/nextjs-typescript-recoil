@@ -8,8 +8,8 @@ type InputProps = {
   disabled?: boolean;
 } & BaseProps;
 
-const Input: React.FC<InputProps> = ({ value, placeholder, disabled = false, style }) => {
-  return <_Input value={value} placeholder={placeholder} disabled={disabled} style={style}></_Input>;
+const Input: React.FC<InputProps> = props => {
+  return <_Input {...props}></_Input>;
 };
 
 export default Input;

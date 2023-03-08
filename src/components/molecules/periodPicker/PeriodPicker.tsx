@@ -9,25 +9,15 @@ type PeriodPicker = {
   disabled?: boolean;
 } & BaseProps;
 
-const PeriodPicker: React.FC<PeriodPicker> = ({ defaultValue, disabled, style, children }) => {
+const PeriodPicker: React.FC<PeriodPicker> = props => {
   const startDateOnchange = () => {};
   const endDateOnchange = () => {};
 
   return (
     <div className={styles['period-picker']}>
-      <_DatePicker
-        onChange={startDateOnchange}
-        defaultValue={defaultValue}
-        disabled={disabled}
-        style={style}
-      ></_DatePicker>
-      {children}
-      <_DatePicker
-        onChange={endDateOnchange}
-        defaultValue={defaultValue}
-        disabled={disabled}
-        style={style}
-      ></_DatePicker>
+      <_DatePicker onChange={startDateOnchange} {...props}></_DatePicker>
+      {props.children}
+      <_DatePicker onChange={endDateOnchange} {...props}></_DatePicker>
     </div>
   );
 };

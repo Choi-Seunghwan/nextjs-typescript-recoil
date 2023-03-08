@@ -11,10 +11,10 @@ type ButtonProps = {
   clickHandler?: any;
 } & BaseProps;
 
-const Button: React.FC<ButtonProps> = ({ text, type, clickHandler, disabled, loading }) => {
+const Button: React.FC<ButtonProps> = props => {
   return (
-    <_Button onClick={clickHandler} disabled={disabled} type={type} loading={loading}>
-      <span>{text}</span>
+    <_Button {...props}>
+      <span>{props.text}</span>
     </_Button>
   );
 };
