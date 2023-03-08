@@ -3,13 +3,12 @@ import { Upload as _Upload } from 'antd';
 import { BaseProps } from 'src/types/common';
 
 type UploadProps = {
-  name?: string;
-
+  onChange?: any;
   disabled?: boolean;
 } & BaseProps;
 
-const Input: React.FC<UploadProps> = props => {
-  return <_Upload {...props}></_Upload>;
+const Upload: React.FC<UploadProps> = props => {
+  return <_Upload {...props}>{props.children}</_Upload>;
 };
 
-export default Input;
+export default Upload;

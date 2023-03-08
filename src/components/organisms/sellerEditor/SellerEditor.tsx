@@ -3,12 +3,17 @@ import styles from './seller-editor.module.scss';
 import Input from '@components/atoms/input/Input';
 import Button from '@components/atoms/button/Button';
 import Select from '@components/atoms/select/Select';
+import Upload from '@components/atoms/upload/upload';
 
 type SellerEditorProps = {
   seller?: {};
 } & BaseProps;
 
 const SellerEditor: React.FC<SellerEditorProps> = ({}) => {
+  const marketHomeImgBtnHandler = (arg: any) => {
+    //
+  };
+
   return (
     <div className={styles['seller-editor']}>
       <div className={styles['seller-editor-inner']}>
@@ -29,6 +34,9 @@ const SellerEditor: React.FC<SellerEditorProps> = ({}) => {
           <p>마켓 이미지</p>
           <div className={styles['market-image-item']}>
             <p>홈섹션 마켓 이미지</p>
+            <Upload onChange={marketHomeImgBtnHandler}>
+              <Button />
+            </Upload>
           </div>
           <div className={styles['market-image-item']}>
             <p>홈섹션 마켓 이미지</p>
