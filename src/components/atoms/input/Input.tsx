@@ -4,6 +4,7 @@ import { BaseProps } from 'src/types/common';
 
 type InputProps = {
   value?: string;
+  onChange?: any;
   placeholder?: string;
   disabled?: boolean;
 } & BaseProps;

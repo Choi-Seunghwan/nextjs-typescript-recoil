@@ -58,7 +58,7 @@ const Seller = () => {
           </div>
         </div>
         <div>
-          <Button text="판매자 등록" clickHandler={goNewSellerBtnHandler} />
+          <Button text="판매자 등록" onClick={goNewSellerBtnHandler} />
         </div>
         <div className={styles['seller-table-wrap']}>
           <SellerTable />

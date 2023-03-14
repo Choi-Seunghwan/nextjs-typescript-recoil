@@ -9,15 +9,31 @@
   .item {
     display: flex;
     align-items: center;
+    gap: 16px;
+
     p {
-      width: 100px;
+      width: 140px;
+      min-width: 140px;
       font-size: 14px;
       font-weight: bold;
       margin-right: 30px;
     }
 
+    .market-img-title {
+      margin-bottom: auto;
+    }
+
     .input {
       width: 280px;
+      margin-right: 12px;
     }
+
+    .image-title {
+      margin-bottom: 12px;
+    }
+  }
+
+  .market-image-item {
+    margin-bottom: auto;
   }
 }
