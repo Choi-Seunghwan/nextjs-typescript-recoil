@@ -1,7 +1,7 @@
 import { TIME_OUT } from 'src/constants/common';
 
-class API {
-  BASE_URL: string = <string>process.env.NEXT_PUBLIC_BASE_URL;
+export class API {
+  API_URL: string = <string>process.env.NEXT_PUBLIC_API_URL;
   config: RequestInit = {
     headers: {
       'Content-Type': 'application/json',
@@ -12,7 +12,7 @@ class API {
 
   getPetchParams(path = '', queries = {}, method = 'GET', data = null) {
     try {
-      const url = new URL(path, this.BASE_URL);
+      const url = new URL(path, this.API_URL);
       const searchParams = new URLSearchParams(queries).toString();
       url.search = searchParams;
 
@@ -60,6 +60,4 @@ class API {
   }
 }
 
-const api = new API();
-
-export default api;
+export const api = new API();

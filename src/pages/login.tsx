@@ -12,4 +12,4 @@ const Login = () => (
   </div>
 );
 
-export default WithLayout(Login, { noSide: true });
+export default WithLayout(Login, { menuDisabled: true });

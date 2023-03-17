@@ -33,9 +33,10 @@ const sideMenuItems: MenuProps['items'] = [
 export type LayoutProps = {
   children?: ReactNode;
   noSide?: boolean;
+  menuDisabled?: boolean;
 };
 
-export const Layout: React.FC<LayoutProps> = ({ children, noSide }) => {
+export const Layout: React.FC<LayoutProps> = ({ children, noSide, menuDisabled = false }) => {
   return (
     <_Layout>
       <Header className={styles['layout-header']}>
@@ -46,7 +47,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, noSide }) => {
       <_Layout style={{ height: '100vh' }}>
         {!noSide && (
           <Sider className={styles['layout-slider']} width={200}>
-            <_Menu mode="inline" className={styles['layout-slider-menu']} items={sideMenuItems} />
+            <_Menu
+              mode="inline"
+              className={styles['layout-slider-menu']}
+              items={sideMenuItems}
+              disabled={menuDisabled}
+            />
           </Sider>
         )}
         <Content>{children}</Content>
