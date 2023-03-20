@@ -1,8 +1,11 @@
 import Title from '@components/atoms/title/Title';
 import WithLayout from '@components/templates/withLayout';
 import styles from '@styles/seller-detail.module.scss';
+import { useAuthCheck } from 'src/hooks/useAuthCheck';
 
 const SellerDetail = () => {
+  useAuthCheck();
+
   return (
     <div className={styles['seller-detail']}>
       <Title text="판매자 정보 상세" subText="판매 정보 관리 >" />

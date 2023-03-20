@@ -3,8 +3,11 @@ import Title from '@components/atoms/title/Title';
 import SellerEditor from '@components/organisms/sellerEditor/SellerEditor';
 import WithLayout from '@components/templates/withLayout';
 import styles from '@styles/new-seller.module.scss';
+import { useAuthCheck } from 'src/hooks/useAuthCheck';
 
 const NewSeller = () => {
+  useAuthCheck();
+
   return (
     <div className={styles['new-seller']}>
       <Title text="판매자 정보 등록" subText="판매 정보 관리 >" />

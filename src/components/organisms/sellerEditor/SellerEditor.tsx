@@ -14,6 +14,8 @@ type SellerEditorProps = {
 
 const SellerEditor: React.FC<SellerEditorProps> = ({}) => {
   const [emailSerachInput, setEmailSearchInput] = useState('');
+  const [nickname, setNickname] = useState('');
+
   const onEmailInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmailSearchInput(e.target.value);
   };
@@ -51,8 +53,8 @@ const SellerEditor: React.FC<SellerEditorProps> = ({}) => {
   };
 
   const emailSearchBtnHandler = async () => {
-    const r = await sellerEmailSearch(emailSerachInput);
-    console.log('@@ r', r);
+    const result = await sellerEmailSearch(emailSerachInput);
+    setNickname(result.nickname);
   };
 
   return (
@@ -70,7 +72,7 @@ const SellerEditor: React.FC<SellerEditorProps> = ({}) => {
         </div>
         <div className={[styles['item'], styles['nickname']].join(' ')}>
           <p>닉네임</p>
-          <span>-</span>
+          <span>{nickname ? nickname : '-'}</span>
         </div>
         <div className={[styles['item'], styles['designer-name']].join(' ')}>
           <p>디자이너마켓명</p>

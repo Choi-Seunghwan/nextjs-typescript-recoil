@@ -7,9 +7,11 @@ import PeriodPicker from '@components/molecules/periodPicker/PeriodPicker';
 import Button from '@components/atoms/button/Button';
 import SellerTable from '@components/organisms/sellerTable/SellerTable';
 import { useRouter } from 'next/router';
+import { useAuthCheck } from 'src/hooks/useAuthCheck';
 
 const Seller = () => {
   const router = useRouter();
+  useAuthCheck();
 
   const serchKeywordOptions = [
     { label: '아이디', value: 'email' },

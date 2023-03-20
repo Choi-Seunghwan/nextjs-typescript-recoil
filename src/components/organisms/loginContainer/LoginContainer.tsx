@@ -7,7 +7,7 @@ import Button from '@components/atoms/button/Button';
 import { signIn } from 'src/api/auth';
 import { useRecoilState } from 'recoil';
 import { authState } from 'src/store/auth.state';
-import { useAuth } from 'src/hooks/auth.hook';
+import { useAuth } from 'src/hooks/useAuth';
 import { useRouter } from 'next/router';
 
 type LoginContainerProps = {} & BaseProps;
