@@ -1,6 +1,13 @@
 import { API } from './API';
 
 export class LegacyAPI extends API {
+  config: RequestInit = {
+    headers: {
+      'Content-Type': 'application/json',
+      'X-User-Agent': 'mrtimemaker-mobile',
+    },
+  };
+
   constructor() {
     super();
 

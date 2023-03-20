@@ -1,9 +1,9 @@
-import { api } from './API';
+import { legacyApi } from './LegacyAPI';
 
-// const PATH = 'admin/seller';
-
-export const signIn = async (email: string, password: string) => {
+export const signIn = async (email: string, password: string): Promise<SignInResult> => {
   try {
+    const result = await legacyApi.post('api/session', {}, { email, password, hidePassword: true });
+    return result;
   } catch (e) {
     throw e;
   }

@@ -1,4 +1,4 @@
-import api from 'src/api/API';
+import { api } from 'src/api/API';
 import React, { useEffect, useRef, useState } from 'react';
 import { BaseProps } from 'src/types/common';
 import Button from '@components/atoms/button/Button';

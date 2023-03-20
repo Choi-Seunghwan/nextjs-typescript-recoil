@@ -1,11 +1,12 @@
-import { TIME_OUT } from 'src/constants/common';
+import { AUTH_TOKEN, TIME_OUT } from 'src/constants/common';
 
 export class API {
   API_URL: string = <string>process.env.NEXT_PUBLIC_API_URL;
   config: RequestInit = {
-    headers: {
+    headers: new Headers({
       'Content-Type': 'application/json',
-    },
+      Authorization: '',
+    }),
   };
 
   constructor() {}
@@ -16,7 +17,9 @@ export class API {
       const searchParams = new URLSearchParams(queries).toString();
       url.search = searchParams;
 
-      const config = { ...this.config };
+      const config = JSON.parse(JSON.stringify(this.config));
+      const token = localStorage?.getItem(AUTH_TOKEN);
+      config.headers['Authorization'] = `Bearer ${token}`;
 
       if (data) config.body = JSON.stringify(data);
 
@@ -46,7 +49,7 @@ export class API {
     }
   }
 
-  async post(path = '', queries = {}, data = null) {
+  async post(path = '', queries: any = {}, data: any = null) {
     try {
       const petchParams = this.getPetchParams(path, queries, 'POST', data);
       const res: Response = await fetch(petchParams.url, petchParams.config);
