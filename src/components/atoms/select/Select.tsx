@@ -4,6 +4,7 @@ import React from 'react';
 import { BaseProps } from 'src/types/common';
 
 type SelectProps = {
+  onChange?: any;
   options?: DefaultOptionType[];
   defaultValue?: any;
   disabled?: boolean;

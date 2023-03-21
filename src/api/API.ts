@@ -3,15 +3,15 @@ import { AUTH_TOKEN, TIME_OUT } from 'src/constants/common';
 export class API {
   API_URL: string = <string>process.env.NEXT_PUBLIC_API_URL;
   config: RequestInit = {
-    headers: new Headers({
+    headers: {
       'Content-Type': 'application/json',
       Authorization: '',
-    }),
+    },
   };
 
   constructor() {}
 
-  getPetchParams(path = '', queries = {}, method = 'GET', data = null) {
+  getFetchParams(path = '', queries = {}, method = 'GET', data = null) {
     try {
       const url = new URL(path, this.API_URL);
       const searchParams = new URLSearchParams(queries).toString();
@@ -38,8 +38,8 @@ export class API {
 
   async get(path = '', queries = {}) {
     try {
-      const petchParams = this.getPetchParams(path, queries, 'GET');
-      const res: Response = await fetch(petchParams.url, petchParams.config);
+      const fetchParams = this.getFetchParams(path, queries, 'GET');
+      const res: Response = await fetch(fetchParams.url, fetchParams.config);
 
       if (!res.ok) throw this.makeHttpError();
 
@@ -51,8 +51,9 @@ export class API {
 
   async post(path = '', queries: any = {}, data: any = null) {
     try {
-      const petchParams = this.getPetchParams(path, queries, 'POST', data);
-      const res: Response = await fetch(petchParams.url, petchParams.config);
+      const fetchParams = this.getFetchParams(path, queries, 'POST', data);
+      console.log('@@', fetchParams);
+      const res: Response = await fetch(fetchParams.url, fetchParams.config);
 
       if (!res.ok) throw this.makeHttpError();
 
